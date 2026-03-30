@@ -13,7 +13,7 @@ const sideArticlesLeft = [
     category: "Bestseller",
     title: "Designing the Future: Modern Publishing Trends",
     author: "By Kavya Sharma",
-    image: "/Image6.png",
+    image: "/kavya.png",
   },
 ];
 
@@ -22,7 +22,7 @@ const sideArticlesRight = [
     category: "Featured",
     title: "From Manuscript to Market: The Author’s Journey",
     author: "By Rohan Kapoor",
-    image: "/Image8.png",
+    image: "/manu.png",
   },
   {
     category: "New Arrival",

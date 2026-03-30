@@ -7,7 +7,7 @@ export default function Newsletter() {
       <div className="absolute inset-0 opacity-[0.05]">
         <div
           className="w-full h-full
-          bg-[linear-gradient(to_right,#1b1714_1px,transparent_1px),linear-gradient(to_bottom,#1b1714_1px,transparent_1px)]
+        
           bg-[size:72px_72px]"
         />
       </div>
@@ -28,7 +28,7 @@ export default function Newsletter() {
             {/* Heading */}
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[0.96] tracking-tight max-w-4xl mx-auto text-[#181410]">
               Stay close to the
-              <span className="block text-[#b59b7d]">world of books.</span>
+              <span className="block text-neutral-400">world of books.</span>
             </h2>
 
             {/* Description */}
