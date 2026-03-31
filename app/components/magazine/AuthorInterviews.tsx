@@ -34,88 +34,95 @@ export default function AuthorInterviews() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative isolate min-h-[680px] md:min-h-[780px] overflow-hidden bg-[#f7f2eb]">
-      {/* Background Image */}
+    <section className="relative isolate min-h-[700px] md:min-h-[800px] overflow-hidden bg-[#f7f2eb]">
+
+      {/* Background */}
       <Image
         src={data[active].img}
         alt={data[active].title}
         fill
         priority
-        className="object-cover transition-all duration-700 ease-out scale-[1.02]"
+        className="object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-[1.04] opacity-95"
       />
 
-      {/* Softer premium overlays */}
-      <div className="absolute inset-0 bg-[#20150f]/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a120d]/70 via-[#1a120d]/35 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#120d0a]/60 via-transparent to-[#f7efe6]/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,248,240,0.16),transparent_38%)]" />
+      {/* Improved overlays (better readability) */}
+      <div className="absolute inset-0 bg-[#120d0a]/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#120d0a]/85 via-[#120d0a]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#120d0a]/70 via-transparent to-transparent" />
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 min-h-[680px] md:min-h-[780px] flex flex-col justify-between">
-        {/* Top */}
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col justify-between min-h-[700px] md:min-h-[800px]">
+
+        {/* HEADER */}
         <div className="max-w-6xl">
-          <p className="text-[11px] uppercase tracking-[0.35em] text-white/70 mb-4">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-white/60 mb-5">
             Editorial Conversations
           </p>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-b border-white/20 pb-8">
-            <div>
-              <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-[#fffaf5]">
-                Author <span className="text-[#e2c7ac]">Interviews</span>
-              </h2>
-            </div>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 border-b border-white/15 pb-10">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-[#fffaf5]">
+              Author <span className="text-[#e2c7ac]">Interviews</span>
+            </h2>
 
-            <p className="max-w-xl text-sm md:text-base leading-7 text-white/80">
+            <p className="max-w-xl text-sm md:text-base leading-7 text-white/75">
               In-depth conversations with remarkable authors on craft,
               publishing, creative discipline, and the evolving world of books.
             </p>
           </div>
         </div>
 
-        {/* Active content */}
-        <div className="grid lg:grid-cols-12 gap-10 items-end pt-10 pb-8">
+        {/* ACTIVE CONTENT */}
+        <div className="grid lg:grid-cols-12 gap-12 items-end pt-12 pb-10">
           <div className="lg:col-span-7 max-w-3xl">
-            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-4 py-1.5 text-[10px] uppercase tracking-[0.28em] text-[#fffaf5]">
+
+            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-[10px] uppercase tracking-[0.3em] text-[#fffaf5]">
               {data[active].tag}
             </span>
 
-            <h3 className="mt-6 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.02] tracking-tight text-[#fffaf5]">
+            <h3 className="mt-6 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-[#fffaf5] transition-all duration-500">
               {data[active].title}
             </h3>
 
-            <p className="mt-5 text-sm sm:text-base md:text-lg leading-8 text-white/80 max-w-2xl">
+            <p className="mt-6 text-sm sm:text-base md:text-lg leading-8 text-white/80 max-w-2xl">
               {data[active].desc}
             </p>
 
-            <div className="mt-7 flex items-center gap-4 text-[#f2ddd0]">
+            <div className="mt-8 flex items-center gap-4 text-[#f2ddd0]">
               <span className="text-sm">{data[active].meta}</span>
               <span className="h-1 w-1 rounded-full bg-[#e2c7ac]" />
-              <span className="text-sm uppercase tracking-[0.22em]">
-                Read Interview
+              <span className="text-sm uppercase tracking-[0.25em]">
+                Read Interview →
               </span>
             </div>
           </div>
 
-          {/* Mobile buttons */}
-          <div className="lg:hidden flex flex-wrap gap-3">
-            {data.map((item, i) => (
-              <button
-                key={item.id}
-                onClick={() => setActive(i)}
-                className={`rounded-full border px-4 py-2 text-sm transition ${
-                  active === i
-                    ? "bg-[#fffaf5] text-[#1b120d] border-[#fffaf5]"
-                    : "border-white/30 text-white/90 hover:border-white/60"
-                }`}
-              >
-                {item.tag}
-              </button>
-            ))}
+          {/* MOBILE / TABLET CTA (IMPROVED AFFORDANCE) */}
+          <div className="lg:hidden flex flex-col gap-4">
+
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+              Tap to explore
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              {data.map((item, i) => (
+                <button
+                  key={item.id}
+                  onClick={() => setActive(i)}
+                  className={`rounded-full px-5 py-2.5 text-sm transition-all duration-300 ${
+                    active === i
+                      ? "bg-[#fffaf5] text-[#1b120d] shadow-lg scale-[1.05]"
+                      : "bg-white/10 text-white/85 hover:bg-white/20"
+                  }`}
+                >
+                  {item.tag}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Bottom cards */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-6 border-t border-white/15 pt-8">
+        {/* DESKTOP CARDS */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-6 border-t border-white/10 pt-10">
           {data.map((item, i) => {
             const isActive = active === i;
 
@@ -123,46 +130,36 @@ export default function AuthorInterviews() {
               <article
                 key={item.id}
                 onMouseEnter={() => setActive(i)}
-                className={`group cursor-pointer rounded-2xl p-5 transition-all duration-300 ${
+                className={`group cursor-pointer rounded-2xl p-6 transition-all duration-500 ${
                   isActive
-                    ? "bg-white/10 backdrop-blur-md border border-white/15"
-                    : "bg-transparent border border-transparent hover:bg-white/5"
+                    ? "bg-white/10 backdrop-blur-md border border-white/20 scale-[1.02]"
+                    : "hover:bg-white/5"
                 }`}
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between">
                   <span
-                    className={`text-[11px] uppercase tracking-[0.28em] transition ${
-                      isActive ? "text-[#fff4ea]" : "text-white/55"
+                    className={`text-[11px] uppercase tracking-[0.28em] ${
+                      isActive ? "text-white" : "text-white/50"
                     }`}
                   >
                     {item.tag}
                   </span>
 
-                  <span
-                    className={`text-sm transition ${
-                      isActive
-                        ? "text-[#fff4ea]"
-                        : "text-white/35 group-hover:text-white/75"
-                    }`}
-                  >
+                  <span className="text-sm text-white/40 group-hover:text-white/80 transition">
                     →
                   </span>
                 </div>
 
-                <h4
-                  className={`mt-4 font-serif text-2xl leading-snug tracking-tight transition ${
-                    isActive ? "text-[#fffaf5]" : "text-white/80"
-                  }`}
-                >
+                <h4 className="mt-4 font-serif text-2xl leading-snug text-white/90">
                   {item.title}
                 </h4>
 
                 <div
-                  className={`overflow-hidden transition-all duration-500 ${
+                  className={`transition-all duration-500 overflow-hidden ${
                     isActive ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-sm leading-7 text-white/75 max-w-sm">
+                  <p className="text-sm leading-7 text-white/75">
                     {item.desc}
                   </p>
                 </div>
