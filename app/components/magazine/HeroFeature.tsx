@@ -28,7 +28,7 @@ const sideArticlesRight = [
     category: "New Arrival",
     title: "Ink & Imagination — Stories That Define Generations",
     author: "By Neha Verma",
-    image: "/Image10.1.png",
+    image: "/Neha4.png",
   },
 ];
 
