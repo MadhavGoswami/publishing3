@@ -28,7 +28,7 @@ const topics = [
 export default function Categories() {
   return (
     <section className="bg-[#f8f6f2] py-20 md:py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         {/* Heading */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 md:mb-16 border-b border-black/10 pb-6">
           <div>

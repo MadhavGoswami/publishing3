@@ -34,37 +34,35 @@ export default function AuthorInterviews() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative isolate min-h-[700px] md:min-h-[800px] overflow-hidden bg-[#f7f2eb]">
-
+    <section className="relative isolate overflow-hidden bg-[#f7f2eb] min-h-[620px] sm:min-h-[700px] md:min-h-[800px]">
       {/* Background */}
       <Image
         src={data[active].img}
         alt={data[active].title}
         fill
         priority
-        className="object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-[1.04] opacity-95"
+        className="object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-[1.03] opacity-95"
       />
 
-      {/* Improved overlays (better readability) */}
-      <div className="absolute inset-0 bg-[#120d0a]/50" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#120d0a]/85 via-[#120d0a]/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#120d0a]/70 via-transparent to-transparent" />
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-[#120d0a]/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#120d0a]/90 via-[#120d0a]/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#120d0a]/78 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col justify-between min-h-[700px] md:min-h-[800px]">
-
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-0 py-12 sm:py-16 md:py-28 flex flex-col justify-between min-h-[620px] sm:min-h-[700px] md:min-h-[800px]">
         {/* HEADER */}
         <div className="max-w-6xl">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-white/60 mb-5">
+          <p className="mb-4 sm:mb-5 text-[10px] sm:text-[11px] uppercase tracking-[0.32em] sm:tracking-[0.4em] text-white/60">
             Editorial Conversations
           </p>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 border-b border-white/15 pb-10">
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-[#fffaf5]">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 sm:gap-8 lg:gap-10 border-b border-white/15 pb-6 sm:pb-8 md:pb-10">
+            <h2 className="font-serif text-[2.2rem] leading-[0.98] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-[#fffaf5]">
               Author <span className="text-[#e2c7ac]">Interviews</span>
             </h2>
 
-            <p className="max-w-xl text-sm md:text-base leading-7 text-white/75">
+            <p className="max-w-xl text-[14px] sm:text-sm md:text-base leading-6 sm:leading-7 text-white/75">
               In-depth conversations with remarkable authors on craft,
               publishing, creative discipline, and the evolving world of books.
             </p>
@@ -72,45 +70,43 @@ export default function AuthorInterviews() {
         </div>
 
         {/* ACTIVE CONTENT */}
-        <div className="grid lg:grid-cols-12 gap-12 items-end pt-12 pb-10">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-end pt-8 sm:pt-10 md:pt-12 pb-6 sm:pb-8 md:pb-10">
           <div className="lg:col-span-7 max-w-3xl">
-
-            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-1.5 text-[10px] uppercase tracking-[0.3em] text-[#fffaf5]">
+            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-3.5 sm:px-4 py-1.5 text-[9px] sm:text-[10px] uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[#fffaf5]">
               {data[active].tag}
             </span>
 
-            <h3 className="mt-6 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-[#fffaf5] transition-all duration-500">
+            <h3 className="mt-4 sm:mt-6 font-serif text-[1.9rem] leading-[1.08] sm:text-4xl md:text-5xl lg:text-[3.4rem] tracking-tight text-[#fffaf5] transition-all duration-500">
               {data[active].title}
             </h3>
 
-            <p className="mt-6 text-sm sm:text-base md:text-lg leading-8 text-white/80 max-w-2xl">
+            <p className="mt-4 sm:mt-6 max-w-2xl text-[14px] sm:text-base md:text-lg leading-6 sm:leading-8 text-white/80">
               {data[active].desc}
             </p>
 
-            <div className="mt-8 flex items-center gap-4 text-[#f2ddd0]">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[#f2ddd0]">
               <span className="text-sm">{data[active].meta}</span>
               <span className="h-1 w-1 rounded-full bg-[#e2c7ac]" />
-              <span className="text-sm uppercase tracking-[0.25em]">
+              <span className="text-[11px] sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.25em]">
                 Read Interview →
               </span>
             </div>
           </div>
 
-          {/* MOBILE / TABLET CTA (IMPROVED AFFORDANCE) */}
-          <div className="lg:hidden flex flex-col gap-4">
-
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+          {/* MOBILE / TABLET CTA */}
+          <div className="lg:hidden flex flex-col gap-3 sm:gap-4">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.28em] sm:tracking-[0.3em] text-white/55">
               Tap to explore
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3">
               {data.map((item, i) => (
                 <button
                   key={item.id}
                   onClick={() => setActive(i)}
-                  className={`rounded-full px-5 py-2.5 text-sm transition-all duration-300 ${
+                  className={`rounded-full px-4 sm:px-5 py-2.5 text-xs sm:text-sm transition-all duration-300 ${
                     active === i
-                      ? "bg-[#fffaf5] text-[#1b120d] shadow-lg scale-[1.05]"
+                      ? "bg-[#fffaf5] text-[#1b120d] shadow-lg scale-[1.03]"
                       : "bg-white/10 text-white/85 hover:bg-white/20"
                   }`}
                 >

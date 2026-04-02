@@ -17,7 +17,7 @@ export default function Newsletter() {
       <div className="absolute bottom-0 left-0 h-[260px] w-[260px] rounded-full bg-[#eadfce]/40 blur-3xl" />
       <div className="absolute top-1/3 right-0 h-[220px] w-[220px] rounded-full bg-[#f2e7d8]/50 blur-3xl" />
 
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <div className="rounded-[2rem] border border-[#d9cbb9] bg-white/75 backdrop-blur-sm px-6 sm:px-8 md:px-12 py-14 md:py-20 shadow-[0_20px_60px_rgba(59,42,28,0.08)]">
           <div className="max-w-4xl mx-auto text-center">
             {/* Eyebrow */}
